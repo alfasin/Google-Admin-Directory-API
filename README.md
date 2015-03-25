@@ -18,8 +18,8 @@ The "service account email" is generated for you and has an ugly format that loo
 In order to make your life easier I'll use the naming convention: 
 ```
 FULL_PATH_TO_P12 = '/full/path/to/your/file.p12'
-ACCOUNT_EMAIL = '<the email you are using in your organization>'
-SERVICE_EMAIL = '<a generated email address - see example above>'
+ACCOUNT_EMAIL = 'the email you are using in your organization'
+SERVICE_EMAIL = 'a generated email address - see example above'
 ```
 
 When time allows, I'll add code examples for using [Google spreadsheet API](https://developers.google.com/google-apps/spreadsheets/) as well.
