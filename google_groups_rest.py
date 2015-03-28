@@ -12,11 +12,16 @@ SERVICE_EMAIL = get_service_email()
 
 
 def get_group_members(group):
-    url = 'https://www.googleapis.com/admin/directory/v1/groups/{}/members'.format(group['email'])
+    url = 'https://www.googleapis.com/admin/directory/v1/groups/{}/members'.format(group)
     return call_google_api("GET", url)
 
 
-def add_group_members(group, payload=False):
+def remove_group_member(group, member):
+    url = 'https://www.googleapis.com/admin/directory/v1/groups/{}/members/{}'.format(group, member)
+    return call_google_api("DELETE", url)    
+
+
+def add_group_member(group, payload=False):
     url = 'https://www.googleapis.com/admin/directory/v1/groups/{}/members'.format(group)
     return call_google_api("POST", url, payload)
 
@@ -53,7 +58,22 @@ if __name__ == '__main__':
         "role": "MEMBER",
     }
     print "\n ---------------------------------- \n"
-    print "calling add_group_member('alfasin@your-organization.com', 'google-group-example@your-organization.com')"
-    res = get_group_members({'email': 'google-group-example@your-organization.com'})
+    print "calling get_group_members('google-group-example@your-organization.com')"
+    res = get_group_members('google-group-example@your-organization.com')
     print json.dumps(res, indent=4, sort_keys=True)
+
+    print "calling add_group_member('alfasin@your-organization.com', 'google-group-example@your-organization.com')"
+    add_group_member('alfasin@your-organization.com', payload)
+    
+    print "calling get_group_members('google-group-example@your-organization.com')"
+    res = get_group_members('google-group-example@your-organization.com')
+    print json.dumps(res, indent=4, sort_keys=True)
+    
+    print "calling remove_group_member('google-group-example@your-organization.com', 'alfasin@your-organization.com')"
+    res = remove_group_member('google-group-example@your-organization.com', 'alfasin@your-organization.com')
+    
+    print "calling get_group_members('google-group-example@your-organization.com')"
+    res = get_group_members('google-group-example@your-organization.com')
+    print json.dumps(res, indent=4, sort_keys=True)
+
     print "\n ---------------------------------- \n"
