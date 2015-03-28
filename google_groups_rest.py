@@ -16,11 +16,9 @@ def get_group_members(group):
     return call_google_api("GET", url)
 
 
-## The following function returns 400 error which is documented here: http://stackoverflow.com/questions/29105310/getting-missing-required-field-member-when-trying-to-add-a-member-to-a-google
-## I'm still hoping that someone that found a workaround will reply to the Stackoverflow thread - once it happens I'll update this file
-# def add_group_members(group, payload=False):
-#     url = 'https://www.googleapis.com/admin/directory/v1/groups/{}/members'.format(group)
-#     return call_google_api("POST", url, payload)
+def add_group_members(group, payload=False):
+    url = 'https://www.googleapis.com/admin/directory/v1/groups/{}/members'.format(group)
+    return call_google_api("POST", url, payload)
 
 
 def call_google_api(method, url, payload=False):
@@ -28,9 +26,9 @@ def call_google_api(method, url, payload=False):
     try:
         http = get_conn()
         if payload:
-            (resp, content) = http.request(uri=url, method=method, body=urlencode(payload))
+            (resp, content) = http.request(uri=url, method=method, body=json.dumps(payload), headers={'Content-type':'application/json'})
         else:
-            (resp, content) = http.request(uri=url, method=method)
+            (resp, content) = http.request(uri=url, method=method, headers={'Content-type':'application/json'})
     except Exception as e:
         print "Failed to post request to [{}] due to: {}".format(url, e)
     return json.loads(content)
