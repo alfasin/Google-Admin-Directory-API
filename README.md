@@ -6,7 +6,7 @@ minimal documentation, almost no code-examples, unclear error messages and etc..
 This repo was created to help other people avoid the pain that I went through.
 
 ## Content
-Starting with [admin directory APIs](https://developers.google.com/admin-sdk/directory/) we'll go through some examples of using the [groups](https://developers.google.com/admin-sdk/directory/v1/reference/groups) and [members](https://developers.google.com/admin-sdk/directory/v1/reference/members) SDK and in addition to that we'll see how to implement REST calls to *groups*.
+Starting with [admin directory APIs](https://developers.google.com/admin-sdk/directory/) we'll go through some examples of using the [groups](https://developers.google.com/admin-sdk/directory/v1/reference/groups) and [members](https://developers.google.com/admin-sdk/directory/v1/reference/members) using both the **SDK** as well as implement **REST** calls to *groups*.
 
 ## Setup
 In order to use Google APIs you first have to register in [Google cloud console](https://console.developers.google.com/), create a project and set credentials (on the left menu-bar). 
