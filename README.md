@@ -20,4 +20,5 @@ When time allows, I'll add code examples for using [Google spreadsheet API](http
 
 Enjoy!
 
-This code was inspected by: [![Codacy Badge](https://api.codacy.com/project/badge/grade/738ade707b4f494997eb78f1334f771a)](https://www.codacy.com/app/alfasin/Google-Admin-Directory-API)
+Tested by: 
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/738ade707b4f494997eb78f1334f771a)](https://www.codacy.com/app/alfasin/Google-Admin-Directory-API)
