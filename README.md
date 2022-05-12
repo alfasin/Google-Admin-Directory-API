@@ -19,6 +19,3 @@ SERVICE_EMAIL = 'a generated email address - see example above'
 When time allows, I'll add code examples for using [Google spreadsheet API](https://developers.google.com/google-apps/spreadsheets/) as well.
 
 Enjoy!
-
-
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/738ade707b4f494997eb78f1334f771a)](https://www.codacy.com/app/alfasin/Google-Admin-Directory-API)
